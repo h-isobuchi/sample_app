@@ -17,6 +17,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select "li", "Name can't be blank"
     assert_select "li", "Email is invalid"
     assert_select "li", "Password is too short (minimum is 6 characters)"
+    assert_select 'form[action="/signup"]'
   end
   
 end
