@@ -14,6 +14,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     assert_select 'div.alert'
     assert_select 'div.alert-danger'
+    assert_select "li", "Name can't be blank"
+    assert_select "li", "Email is invalid"
+    assert_select "li", "Password is too short (minimum is 6 characters)"
   end
   
 end
